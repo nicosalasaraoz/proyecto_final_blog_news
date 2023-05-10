@@ -5,14 +5,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import Desplegable from "./Desplegable";
 import { FaSistrix } from "react-icons/fa";
 
-<<<<<<< HEAD
 const Header = ({ setSearchState, searchState }) => {
-=======
-
-const Header = ({search, setSearch}) => {
-  
-
->>>>>>> 1bc5c7ea3e98588b0efbbf83cc6c3d52a6702f2f
   return (
     <>
       <Navbar bg="dark" className="" sticky="top">
@@ -28,7 +21,6 @@ const Header = ({search, setSearch}) => {
               />
             </Navbar.Brand>
           </div>
-<<<<<<< HEAD
 
           <div className="SearchBar">
             <div className="ocultar-busqueda input-wrapper">
@@ -65,50 +57,6 @@ const Header = ({search, setSearch}) => {
                 </Link>
               </li>
             </ul>
-=======
-          <div className="">
-            <Nav className="d-flex justify-content-around">
-              <div className="ocultar-busqueda input-wrapper">
-              <Form>
-              <Form.Group>
-                <Form.Control
-                  type="text"
-                  placeholder="Buscar articulo"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-              </Form.Group>
-              <Link to={`/search=${search}`}>
-              <FaSistrix className="input-icon" onClick={() => setSearch("")}/>
-              </Link>
-            </Form>
-          </div>
-              <div className="d-flex align-items-around">
-                <ul>
-                  <li>
-                    <Link
-                      to="/error404"
-                      className="icono-header text-center m-2"
-                    >
-                      <FaFacebookF />
-                    </Link>
-                    <Link
-                      to="/error404"
-                      className="icono-header text-center m-2"
-                    >
-                      <FaTwitter />
-                    </Link>
-                    <Link
-                      to="/error404"
-                      className="icono-header text-center m-2"
-                    >
-                      <FaInstagram />
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </Nav>
->>>>>>> 1bc5c7ea3e98588b0efbbf83cc6c3d52a6702f2f
           </div>
         </Container>
       </Navbar>
