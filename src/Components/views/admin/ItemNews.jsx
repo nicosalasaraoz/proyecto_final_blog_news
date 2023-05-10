@@ -1,4 +1,4 @@
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import {Link} from 'react-router-dom'
 import { borrarProductoAPI, consultarAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
