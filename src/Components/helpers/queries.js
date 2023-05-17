@@ -7,11 +7,10 @@ const URL = process.env.REACT_APP_API_NEWS;
 
 export const consultarAPI = async()=>{
     try{
-        // console.log(URL)
         const respuesta = await fetch(URL);
-        const listaProductos = await respuesta.json()
-        console.log(listaProductos)
-        return listaProductos;
+        const listaNews = await respuesta.json()
+        // console.log(listaNews)
+        return listaNews;
     }catch(error){
         console.log(error)
         return false;

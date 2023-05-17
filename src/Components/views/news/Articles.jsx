@@ -1,18 +1,23 @@
+import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
+import { consultarAPI } from "../../helpers/queries";
 
-const Articles = ({ Art }) => {
-  const { id, title, url } = { ...Art };
-  // const [Art, setArt] = useState([]);
-
-  // useEffect(()=>{
-  //    consultarAPI().then((respuesta)=>{
-  //     // console.log(respuesta)
-  //     setArt(respuesta);
-  //    })
-
-  // },[])
+const Articles = () => {
+  
+  const [art, setArt] = useState([]);
+  const { id, title, url } = { ...art };
+  useEffect(() => {
+    consultarAPI().then((respuesta) => {
+      console.log(respuesta)
+      if (respuesta.status === 200) {
+        //cargar los datos 
+        setArt(respuesta)
+      }
+    });
+  }, []);
+        console.log(art)
   return (
     <>
     <div className="Card">

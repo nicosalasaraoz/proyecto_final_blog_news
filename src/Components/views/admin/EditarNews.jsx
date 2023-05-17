@@ -15,7 +15,6 @@ const EditarNews = () => {
   useEffect(() => {
     obtenerProductoAPI(id).then((respuesta) => {
       if (respuesta.status === 200) {
-        // console.log(respuesta);
         //cargar los datos en el formulario
         setValue('nombreProducto',respuesta.dato.nombreProducto);
         setValue('precio',respuesta.dato.precio);

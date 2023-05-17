@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row} from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import Header from "./Header";  
 import Articles from "./news/Articles";
 
@@ -19,7 +19,6 @@ const Main = ({ News, setSearchState, searchState}) => {
         }
       </div>
     </Container>
-    {/* <Search setSearchState={searchState}/> */}
     </>
   );
 };

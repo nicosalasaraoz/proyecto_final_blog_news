@@ -22,7 +22,7 @@ function App() {
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
-        <NavbarMain News={News} searchState={searchState} setSearchState={setSearchState} />
+        <NavbarMain searchState={searchState} setSearchState={setSearchState} />
           <Routes>
             <Route exact path="/" element={<Main News={News} searchState={searchState} setSearchState={setSearchState } />} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
@@ -32,9 +32,7 @@ function App() {
             <Route exact path="/Administrar/crear" element={<CrearNews />} />
             <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
-            {/* <Route path="/search=:resultado" element={<Search Artdb={Artdb} />} />*/}
-            {/* <Route path="/Administrar/*"
-                    element={
+            {/* <Route path="/Administrar/*"element={
                         <RutasProtegidas>
                             <RutasAdmin/>
                         </RutasProtegidas>

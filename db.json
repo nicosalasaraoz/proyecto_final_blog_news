@@ -2,7 +2,7 @@
   "News": [
     {
       "id": "01",
-      "category": "Sports",
+      "category": "Deporte",
       "title": "Arrancó el Mundial y con una ceremonia impactante se levantó el telón de Qatar 2022",
       "description": "La apertura de la Copa del Mundo en el estadio Al Bayt de Doha, bajo la conducción de Morgan Freeman, incluyó un show de Jung Kook y la participación del Gauchito de Argentina 1978; una hora después comenzó el primer partido, Qatar-Ecuador",
       "url": "https://www.lanacion.com.ar/resizer/wSY2UNvjCwpT0tOO_9RDb-gPf9U=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/CEDJTZX2IZGEDO72SIY34VZCRI.JPG",
@@ -10,7 +10,7 @@
     },
     {
       "id": "02",
-      "category": "Sports",
+      "category": "Deporte",
       "title": "Mundial Qatar 2022: las diez razones por las que en este país se jugará la Copa más atípica de la historia",
       "description": "La fiesta por la que se espera cuatro años cada vez que termina (cuatro años y medio, esta vez), ya está en marcha",
       "url": "https://resizer.glanacion.com/resizer/hhCCQ5jo51MwBjnflQo-v9Q5U_w=/879x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/GAFSTS6GRFGVLKU7P7C3XP7WAI",
@@ -18,7 +18,7 @@
     },
     {
       "id": "03",
-      "category": "Economy",
+      "category": "Economia",
       "title": "Las metas de los inversores argentinos",
       "description": "En lo que va del año se abrieron más de 140.000 cuentas comitentes, dato que revela la necesidad de potenciar el ingreso mediante la inversión",
       "url": "https://www.lanacion.com.ar/resizer/3Lq7mumSuBZN84_TY1m2p9QG_LU=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/DN244MAFKBE7ZJEVUAZQ37NJ4U.jpg",
@@ -26,7 +26,7 @@
     },
     {
       "id": "04",
-      "category": "Economy",
+      "category": "Economia",
       "title": "Sergio Massa proyecta bajar un punto de inflación cada 60 días y llegar al 3% en abril",
       "description": "El titular del Palacio de Hacienda criticó además la negociación de su antecesor con el FMI",
       "url": "https://www.lanacion.com.ar/resizer/jMc64ujRWuT7OzvjNobal9p3Kuo=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/TEHDQDMRKJEXLNPR3ORIEQXEVA.jpg",
@@ -34,7 +34,7 @@
     },
     {
       "id": "05",
-      "category": "World",
+      "category": "Mundo",
       "title": "Egipto, sospechado de favorecer a los Estados petroleros y gasíferos desde la presidencia de la COP27",
       "description": "El país anfitrión es acusado de no haber dejado de lado sus intereses nacionales para lograr un acuerdo común; este año fueron invitados más grupos de presión a favor de los hidrocarburos",
       "url": "https://www.lanacion.com.ar/resizer/h4ZU-_8Atp6QXL1JvbgWQVsBIH4=/1200x800/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/RPVUDKMONBFRPN3C46R54KYSYI",
@@ -42,7 +42,7 @@
     },
     {
       "id": "06",
-      "category": "Sports",
+      "category": "Deporte",
       "title": "Inigualable, Messi cumple 1000 partidos.",
       "description": "Goles, récords y perlitas de un crack de todos los tiempos",
       "url": "https://buckets3.glanacion.com/lntools/anexos/fotos/87/51087w1366q100.jpg",
@@ -106,7 +106,7 @@
     },
     {
       "id": "14",
-      "category": "Economy",
+      "category": "Economia",
       "title": "Una tormenta persigue a las empresas más prometedoras y golpeará a la Argentina",
       "description": "En menos de un año, las empresas tecnológicas pasaron de anuncios de inversiones a avisos de despido",
       "url": "https://www.lanacion.com.ar/resizer/XE47zJBbPPWa-8esfpSU7R0z8fg=/1200x800/smart/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/T6LLDNT3OFFGHP6QSTYJISQENE.jpg",

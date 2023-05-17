@@ -23,7 +23,7 @@ const ArticleDetail = () => {
                 <Card className="">
                 <Row>
                     <Col>
-                    <Card.Img variant="top" src={art.dato?.image} />
+                    <Card.Img variant="top" src={art.dato?.url} />
                     </Col>
                     <Col>
                     <Container>

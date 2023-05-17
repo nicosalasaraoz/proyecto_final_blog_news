@@ -6,7 +6,7 @@ const Search = ({News, searchState, setSearchState}) => {
   const [articles, setArticles] = useState([]);
 
   // Cambiar URL por na de Noticias desde base de datos
-  const URL = "https://fakestoreapi.com/products";
+  // const URL = "https://fakestoreapi.com/products";
 
 
   const prueba = () =>{
