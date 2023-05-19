@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 
 const Articles = ({Art}) => {
-  
   const { id, title, url } = { ...Art };
+
   return (
     <>
     <div className="Card">
