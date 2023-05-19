@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
-import { consultarAPI } from "../../helpers/queries";
 
-const Articles = () => {
+const Articles = ({Art}) => {
   
-  const [art, setArt] = useState([]);
-  const { id, title, url } = { ...art };
-  useEffect(() => {
-    consultarAPI().then((respuesta) => {
-      console.log(respuesta)
-      if (respuesta.status === 200) {
-        //cargar los datos 
-        setArt(respuesta)
-      }
-    });
-  }, []);
-        console.log(art)
+  const { id, title, url } = { ...Art };
   return (
     <>
     <div className="Card">

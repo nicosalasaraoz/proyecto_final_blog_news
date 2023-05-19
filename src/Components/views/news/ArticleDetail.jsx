@@ -6,7 +6,7 @@ import { obtenerProductoAPI } from "../../helpers/queries";
 
 const ArticleDetail = () => {
     const { id } = useParams();
-    const [art, setArt] = useState({});
+    const [Art, setArt] = useState({});
 
     useEffect(() => {
         obtenerProductoAPI(id).then((respuesta) => {
@@ -23,17 +23,17 @@ const ArticleDetail = () => {
                 <Card className="">
                 <Row>
                     <Col>
-                    <Card.Img variant="top" src={art.dato?.url} />
+                    <Card.Img variant="top" src={Art.dato?.url} />
                     </Col>
                     <Col>
                     <Container>
-                        <Card.Text as="h1">{art.dato?.title}</Card.Text>
+                        <Card.Text as="h1">{Art.dato?.title}</Card.Text>
                         <Container className="d-flex justify-content-between"></Container>
                     </Container>
                     </Col>
                 </Row>
                 <Card.Body>
-                    <Card.Text>{art.dato?.description}</Card.Text>
+                    <Card.Text>{Art.dato?.description}</Card.Text>
                 </Card.Body>
                 </Card>
             </Container>
