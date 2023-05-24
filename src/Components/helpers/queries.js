@@ -17,7 +17,7 @@ export const consultarAPI = async()=>{
     }
 }
 
-export const obtenerProductoAPI = async(id)=>{
+export const obtenerNewsAPI = async(id)=>{
     try{
         // console.log(URL)
         const respuesta = await fetch(URL+'/'+id);

@@ -10,7 +10,7 @@ import Error404 from "./Components/common/Error404";
 import Footer from "./Components/common/Footer"
 import Search from "./Components/views/Search";
 import ArticleDetail from "./Components/views/news/ArticleDetail";
-import Administrador from "./Components/views/admin/Administrador";
+import Administrador from "./Components/views/Administrador";
 import CrearNews from "./Components/views/admin/CrearNews";
 import EditarNews from "./Components/views/admin/EditarNews";
 import { useState, useEffect } from "react";
@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/" element={<Main News={News} searchState={searchState} setSearchState={setSearchState } />} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
             <Route path="*" element={<Error404 />} />
-            <Route path="/ArticleDetail/:id"  element={<ArticleDetail News={News}/>} />
+            <Route path="/ArticleDetail/:id"  element={<ArticleDetail/>} />
             <Route exact path="/Administrar" element={<Administrador News={News} />} />
             <Route exact path="/Administrar/crear" element={<CrearNews />} />
             <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />

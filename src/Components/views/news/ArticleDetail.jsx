@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { obtenerProductoAPI } from "../../helpers/queries";
+import { obtenerNewsAPI } from "../../helpers/queries";
 
 
 const ArticleDetail = () => {
@@ -9,13 +9,12 @@ const ArticleDetail = () => {
     const [Art, setArt] = useState({});
 
     useEffect(() => {
-        obtenerProductoAPI(id).then((respuesta) => {
-          if (respuesta.status === 200) {
-            //cargar los datos 
-            setArt(respuesta)
-          }
+        obtenerNewsAPI(id).then((respuesta) => {
+            if (respuesta.status === 200) {
+                setArt(respuesta.dato);
+            }
         });
-      }, []);
+    }, [id]);
 
     return (
         <>
@@ -23,17 +22,20 @@ const ArticleDetail = () => {
                 <Card className="">
                 <Row>
                     <Col>
-                    <Card.Img variant="top" src={Art.dato?.url} />
+                    <Card.Img variant="top" src={Art.url} />
                     </Col>
                     <Col>
                     <Container>
-                        <Card.Text as="h1">{Art.dato?.title}</Card.Text>
+                        <Card.Text as="h1">{Art.title}</Card.Text>
                         <Container className="d-flex justify-content-between"></Container>
+                <Card.Body>
+                    <Card.Text>{Art.description}</Card.Text>
+                </Card.Body>
                     </Container>
                     </Col>
                 </Row>
                 <Card.Body>
-                    <Card.Text>{Art.dato?.description}</Card.Text>
+                    <Card.Text>{Art.content}</Card.Text>
                 </Card.Body>
                 </Card>
             </Container>

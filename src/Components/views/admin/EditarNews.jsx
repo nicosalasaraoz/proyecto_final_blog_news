@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
-import { editarProductoAPI, obtenerProductoAPI } from "../../helpers/queries";
+import { editarProductoAPI, obtenerNewsAPI } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -13,7 +13,7 @@ const EditarNews = () => {
   const navegacion = useNavigate();
 
   useEffect(() => {
-    obtenerProductoAPI(id).then((respuesta) => {
+    obtenerNewsAPI(id).then((respuesta) => {
       if (respuesta.status === 200) {
         //cargar los datos en el formulario
         setValue('nombreProducto',respuesta.dato.nombreProducto);

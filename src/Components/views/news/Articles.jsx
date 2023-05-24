@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 
 const Articles = ({Art}) => {
-  const { id, title, url } = { ...Art };
+  const { _id, title, url } = { ...Art };
+  
 
   return (
     <>
@@ -13,7 +14,7 @@ const Articles = ({Art}) => {
         <Card.Text className="px-2 text-center">{title}</Card.Text>
       </Card.Body>
       <div className="mt-auto btns text-white">
-        <Link className="btn" to={`/ArticleDetail/${id}`}>
+        <Link className="btn" to={`/ArticleDetail/${_id}`}>
           Ir al articulo
         </Link>
         <Link
