@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field } from "Formik";
+import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 

@@ -15,9 +15,11 @@ import CrearNews from "./Components/views/admin/CrearNews";
 import EditarNews from "./Components/views/admin/EditarNews";
 import { useState, useEffect } from "react";
 import { consultarAPI } from "./Components/helpers/queries";
+import Login from "./Components/views/Login";
 
 function App() {
-  
+  const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [searchState, setSearchState] = useState('');
   const [News, setNews] = useState([]);
   
@@ -34,7 +36,7 @@ function App() {
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
-        <NavbarMain searchState={searchState} setSearchState={setSearchState} />
+        <NavbarMain searchState={searchState} setSearchState={setSearchState} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
           <Routes>
             <Route exact path="/" element={<Main News={News} searchState={searchState} setSearchState={setSearchState } />} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
@@ -43,6 +45,7 @@ function App() {
             <Route exact path="/Administrar" element={<Administrador News={News} />} />
             <Route exact path="/Administrar/crear" element={<CrearNews />} />
             <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />
+            <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
             {/* <Route path="/Administrar/*"element={
                         <RutasProtegidas>

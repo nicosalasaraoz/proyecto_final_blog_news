@@ -20,7 +20,7 @@ const Administrador = () => {
     <Container className="mainSection">
       <article className="d-flex justify-content-between align-items-center ">
         <h1 className="display-3 mt-3">Noticias disponibles</h1>
-        <Link className="h-100 btn btn-primary" to="/administrar/crear">
+        <Link className="h-100 btn btn-primary text-white" to="/administrar/crear">
           Agregar
         </Link>
         <hr />

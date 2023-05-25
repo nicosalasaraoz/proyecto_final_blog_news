@@ -77,3 +77,26 @@ export const borrarProductoAPI = async(id)=>{
         return false;
     }
 }
+
+export const login = async (usuario) => {
+    try {
+        //verificar si el email existe
+        const respuesta = await fetch(URL);
+        const listaUsuarios = await respuesta.json();
+        //buscar el usuario que tiene el email
+        const usuarioBuscado = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email);
+        if (usuarioBuscado) {
+            console.log("email encontrado");
+            //verificar el password
+            if (usuarioBuscado.password === usuario.password) {
+                return usuarioBuscado;
+            }
+        } else {
+            console.log("el mail no existe");
+            return;
+        }
+    } catch (error) {
+        console.log("error en el login");
+        return;
+    }
+};
