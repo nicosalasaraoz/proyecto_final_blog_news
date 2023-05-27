@@ -3,7 +3,7 @@ import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { FaSistrix } from "react-icons/fa";
 
-const NavbarMain = ({ News, searchState, setSearchState }) => {
+const NavbarMain = ({searchState, setSearchState }) => {
 
   return (
     <>

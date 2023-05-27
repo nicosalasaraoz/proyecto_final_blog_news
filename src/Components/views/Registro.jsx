@@ -1,11 +1,11 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { crearUsuarioAPI } from "../helpers/queries";
 
 const Registro = ({ setUsuarioLogueado }) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -27,7 +27,7 @@ const Registro = ({ setUsuarioLogueado }) => {
         //actualizar state (me falta traer el props)
         setUsuarioLogueado(dataRegistro);
         //redirecciono
-        navigate("/administrar");
+        // navigate("/administrar");
         //reseteo el formulario
         reset();
     };

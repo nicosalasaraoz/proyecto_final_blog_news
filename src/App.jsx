@@ -40,11 +40,11 @@ function App() {
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <NavbarMain searchState={searchState} setSearchState={setSearchState} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
           <Routes>
-            <Route exact path="/" element={<Main News={News} searchState={searchState} setSearchState={setSearchState } />} />
+            <Route exact path="/" element={<Main searchState={searchState} setSearchState={setSearchState } />} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/ArticleDetail/:id"  element={<ArticleDetail/>} />
-            <Route exact path="/Administrar" element={<Administrador News={News} />} />
+            <Route exact path="/Administrar" element={<Administrador/>} />
             <Route exact path="/Administrar/crear" element={<CrearNews />} />
             <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
