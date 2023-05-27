@@ -16,6 +16,8 @@ import EditarNews from "./Components/views/admin/EditarNews";
 import { useState, useEffect } from "react";
 import { consultarAPI } from "./Components/helpers/queries";
 import Login from "./Components/views/Login";
+import Registro from "./Components/views/Registro";
+
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
@@ -46,6 +48,7 @@ function App() {
             <Route exact path="/Administrar/crear" element={<CrearNews />} />
             <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+            <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
             {/* <Route path="/Administrar/*"element={
                         <RutasProtegidas>

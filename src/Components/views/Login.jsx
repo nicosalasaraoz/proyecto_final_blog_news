@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
+
 const Login = ({ setUsuarioLogueado }) => {
     const {
         register,
@@ -13,9 +14,10 @@ const Login = ({ setUsuarioLogueado }) => {
 
     const navegacion = useNavigate();
     const onSubmitLogin = (dataLogin) => {
-        console.log(dataLogin);
+        // console.log(dataLogin);
+
         login(dataLogin).then((respuesta) => {
-            console.log(respuesta);
+            // console.log(respuesta);
             if (respuesta) {
                 //almaceno el usuario en el state y localstorage
                 localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));

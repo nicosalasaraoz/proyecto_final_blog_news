@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import ModalRegistro from "../views/ModalRegistro";
 import { FaSistrix } from "react-icons/fa";
 
 const NavbarMain = ({ News, searchState, setSearchState }) => {
-  // const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
-  const [registro, setRegistro] = useState(false);
-
-  const handleCerrar = () => setRegistro(false);
-  const handleMostrar = () => setRegistro(true);
 
   return (
     <>
@@ -63,16 +54,11 @@ const NavbarMain = ({ News, searchState, setSearchState }) => {
                   <ion-icon name="star" className=""></ion-icon>
                   <span className="textNav">Favoritos</span>
                 </Link>
-                {/* <Link className="navIcons" onClick={handleShow}>
-                  <ion-icon name="log-in-outline" size={5}></ion-icon>
-                  <span className="textNav">Login</span>
-                </Link> */}
-                <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
                 
-                <Link className="navIcons" onClick={handleMostrar}>
-                  <ion-icon name="calendar"></ion-icon>
-                  <span className="textNav">Registrarse</span>
-                </Link>
+                <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
+                <NavLink to="/usuario/registro" className={"nav-item nav-link text-white"}><ion-icon name="calendar"></ion-icon>
+                  <span className="textNav">Registrarse</span></NavLink>
+                
               </div>
               <div className="sec-nav">
                 <hr className="text-white" />
@@ -109,7 +95,6 @@ const NavbarMain = ({ News, searchState, setSearchState }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <ModalRegistro registro={registro} handleCerrar={handleCerrar} />
     </>
   );
 };
