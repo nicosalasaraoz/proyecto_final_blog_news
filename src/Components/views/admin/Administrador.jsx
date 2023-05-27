@@ -9,7 +9,7 @@ const Administrador = () => {
 
     useEffect(()=>{
        consultarAPI().then((respuesta)=>{
-        // console.log(respuesta)
+
         setNoticias(respuesta);
        })
        

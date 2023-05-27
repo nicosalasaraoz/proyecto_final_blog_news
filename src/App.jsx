@@ -30,11 +30,10 @@ function App() {
       if (respuesta.status === 200) {
         //cargar los datos 
         setNews(respuesta)
-        // console.log(respuesta)
       }
     });
   }, []);
-  // console.log(News)
+
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
@@ -50,12 +49,6 @@ function App() {
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
-            {/* <Route path="/Administrar/*"element={
-                        <RutasProtegidas>
-                            <RutasAdmin/>
-                        </RutasProtegidas>
-                    }
-                /> */}
           </Routes >
           <Footer />
       </Container>
