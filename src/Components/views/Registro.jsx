@@ -93,7 +93,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                             <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
                         </Form.Group>
                    
-                        <Form.Group className="mb-3" controlId="formRegisterPassword">
+                        {/* <Form.Group className="mb-3" controlId="formRegisterPassword">
                             <Form.Label>Repita contraseña</Form.Label>
                             <Form.Control
                                 type="password"
@@ -108,7 +108,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                                 })}
                             />
                             <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
-                        </Form.Group>
+                        </Form.Group> */}
                     </Col>
                 </Row>
                 <div className="text-center mt-2">

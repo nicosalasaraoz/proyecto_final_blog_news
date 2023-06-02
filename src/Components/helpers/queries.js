@@ -4,8 +4,8 @@
 //peticion DELETE sirve para borrar un producto
 
 const URL = process.env.REACT_APP_API_NEWS;
-const URLU = process.env.REACT_APP_API_USUARIOS
-
+const URLU = process.env.REACT_APP_API_LOGIN
+const URLR = process.env.REACT_APP_API_REGISTER
 export const consultarAPI = async()=>{
     try{
         const respuesta = await fetch(URL);
@@ -82,7 +82,7 @@ export const borrarProductoAPI = async(id)=>{
 //peticion POST (para agregar un USUARIO al servidor)//
 export const crearUsuarioAPI = async (usuario) => {
     try {
-        const respuesta = await fetch(URLU, {
+        const respuesta = await fetch(URLR, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
