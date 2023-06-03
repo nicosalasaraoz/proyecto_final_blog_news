@@ -1,11 +1,11 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { crearUsuarioAPI } from "../helpers/queries";
 
 const Registro = ({ setUsuarioLogueado }) => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -16,19 +16,20 @@ const Registro = ({ setUsuarioLogueado }) => {
     const onSubmitRegistro = (dataRegistro) => {
         //una vez todo validado enviamos la peticion a la API
         crearUsuarioAPI(dataRegistro).then((respuesta) => {
-            if (respuesta.status === 201) {
+            if (respuesta.status === 200) {
                 Swal.fire("Usuario creado", "El Usuario fue registrado correctamente", "success");
             } else {
-                Swal.fire("Ocurrio un error", "Intente esta operación en unos minutos", "error");
+                Swal.fire("El usuario no fue creado", "Los datos ingresados son incorrectos", "error");
             }
         });
         //guardar sesion en el local storage
         localStorage.setItem("tokenUsuario", JSON.stringify(dataRegistro));
         //actualizar state (me falta traer el props)
         setUsuarioLogueado(dataRegistro);
-        //redirecciono
-        // navigate("/administrar");
-        //reseteo el formulario
+        console.log(dataRegistro)
+        // redirecciono
+        navigate("/");
+        // reseteo el formulario
         reset();
     };
     return (
@@ -45,7 +46,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese su nombre"
-                                {...register("nombre", {
+                                {...register("name", {
                                     required: "Ingrese su nombre",
                                     minLength: {
                                         value: 2,
@@ -57,7 +58,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                                     },
                                 })}
                             />
-                            <Form.Text className="text-danger">{errors.nombre?.message}</Form.Text>
+                            <Form.Text className="text-danger">{errors.name?.message}</Form.Text>
                         </Form.Group>
                    
                         <Form.Group className="mb-3" controlId="formRegisterEmail">
@@ -81,7 +82,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
-                                {...register("password", {
+                                {...register("pass", {
                                     required: "Ingrese su contraseña",
                                     pattern: {
                                         value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
@@ -90,7 +91,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                                     },
                                 })}
                             />
-                            <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+                            <Form.Text className="text-danger">{errors.pass?.message}</Form.Text>
                         </Form.Group>
                     </Col>
                 </Row>

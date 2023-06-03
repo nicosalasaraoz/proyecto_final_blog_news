@@ -4,8 +4,9 @@
 //peticion DELETE sirve para borrar un producto
 
 const URL = process.env.REACT_APP_API_NEWS;
-const URLU = process.env.REACT_APP_API_LOGIN
-const URLR = process.env.REACT_APP_API_REGISTER
+const URLU = "https://backend-blog-news.vercel.app/blognews/auth/login";
+const URLR = "https://backend-blog-news.vercel.app/blognews/auth/user";
+
 export const consultarAPI = async()=>{
     try{
         const respuesta = await fetch(URL);
@@ -89,10 +90,11 @@ export const crearUsuarioAPI = async (usuario) => {
             },
             body: JSON.stringify(usuario),
         });
+        console.log(URLR)
         return respuesta;
     } catch (error) {
         console.log(error);
-        return;
+        return false;
     }
 };
 
