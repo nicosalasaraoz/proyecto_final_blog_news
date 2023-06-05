@@ -16,7 +16,7 @@ const Registro = ({ setUsuarioLogueado }) => {
     const onSubmitRegistro = (dataRegistro) => {
         //una vez todo validado enviamos la peticion a la API
         crearUsuarioAPI(dataRegistro).then((respuesta) => {
-            if (respuesta.status === 204) {
+            if (respuesta.status === 201) {
                 Swal.fire("Usuario creado", "El Usuario fue registrado correctamente", "success");
             } else {
                 Swal.fire("El usuario no fue creado", "Los datos ingresados son incorrectos", "error");
