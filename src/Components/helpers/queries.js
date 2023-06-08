@@ -4,14 +4,14 @@
 //peticion DELETE sirve para borrar un producto
 
 const URL = process.env.REACT_APP_API_NEWS;
-const URLU = "https://backend-blog-news.vercel.app/blognews/auth/login";
-const URLR = "https://backend-blog-news.vercel.app/blognews/auth/user";
+const URLlogin = process.env.REACT_APP_API_LOGIN;
+const URLRegister = process.env.REACT_APP_API_REGISTER;
 
 export const consultarAPI = async()=>{
     try{
         const respuesta = await fetch(URL);
         const listaNews = await respuesta.json()
-        // console.log(listaNews)
+        
         return listaNews;
     }catch(error){
         console.log(error)
@@ -83,14 +83,14 @@ export const borrarProductoAPI = async(id)=>{
 //peticion POST (para agregar un USUARIO al servidor)//
 export const crearUsuarioAPI = async (usuario) => {
     try {
-        const respuesta = await fetch(URLR, {
+        const respuesta = await fetch(URLRegister, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(usuario),
         });
-        console.log(URLR)
+        
         return respuesta;
     } catch (error) {
         console.log(error);
@@ -99,24 +99,22 @@ export const crearUsuarioAPI = async (usuario) => {
 };
 
 export const login = async (usuario) => {
-    try {
-        //verificar si el email existe
-        const respuesta = await fetch(URLU);
-        const listaUsuarios = await respuesta.json();
-        //buscar el usuario que tiene el email
-        const usuarioBuscado = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email);
-        if (usuarioBuscado) {
-            console.log("email encontrado");
-            //verificar el password
-            if (usuarioBuscado.password === usuario.password) {
-                return usuarioBuscado;
-            }
-        } else {
-            console.log("el mail no existe");
-            return;
-        }
+        try {
+        const respuesta = await fetch(URLlogin, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usuario),
+        });
+        const datos = await respuesta.json();
+        return {
+            status: respuesta.status,
+            usuario: datos.usuario,
+            token: datos.token,
+            mensaje: datos.mensaje,
+        };
     } catch (error) {
-        console.log("error en el login");
-        return;
+        return false;
     }
 };

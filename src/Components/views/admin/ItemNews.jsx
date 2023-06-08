@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const ItemNews = ({noticias, setNoticias}) => {
     const {_id, category, title, description, url, content } = {...noticias}
-    console.log(noticias)
+    
     const borrarProducto = ()=>{
        
         borrarProductoAPI(_id).then((respuesta)=>{

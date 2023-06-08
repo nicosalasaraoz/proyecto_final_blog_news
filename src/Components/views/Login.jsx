@@ -21,7 +21,7 @@ const Login = ({ setUsuarioLogueado }) => {
             if (respuesta) {
                 //almaceno el usuario en el state y localstorage
                 localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
-                setUsuarioLogueado(respuesta);
+                setUsuarioLogueado(respuesta.usuario);
                 // si el usuario es correcto entonces redirecciono al admin
                 //reseteo el formulario
                 reset();
@@ -57,7 +57,7 @@ const Login = ({ setUsuarioLogueado }) => {
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
-                                {...register("password", {
+                                {...register("pass", {
                                     required: "Ingrese su contraseña",
                                     pattern: {
                                         value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
@@ -66,7 +66,7 @@ const Login = ({ setUsuarioLogueado }) => {
                                     },
                                 })}
                             />
-                            <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+                            <Form.Text className="text-danger">{errors.pass?.message}</Form.Text>
                         </Form.Group>
                         <Button variant="danger" type="submit">
                             Ingresar
