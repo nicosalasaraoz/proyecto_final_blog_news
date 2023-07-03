@@ -21,7 +21,6 @@ export const consultarAPI = async()=>{
 
 export const obtenerNewsAPI = async(id)=>{
     try{
-        // console.log(URL)
         const respuesta = await fetch(URL+'/'+id);
         const art ={
             dato: await respuesta.json(),
@@ -34,14 +33,12 @@ export const obtenerNewsAPI = async(id)=>{
     }
 }
 
-
-export const crearProductoAPI = async(producto)=>{
+export const crearNewsAPI = async(producto)=>{
     try{
-        const respuesta = await fetch(URL, {
+        const respuesta = await fetch(URL, console.log(URL), {
+            
             method: "POST",
-            headers:{
-                "Content-Type": "application/json"
-            },
+            headers:{"Content-Type": "application/json"},
             body: JSON.stringify(producto) 
         });
         return respuesta;

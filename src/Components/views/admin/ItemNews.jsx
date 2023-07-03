@@ -33,10 +33,10 @@ const ItemNews = ({noticias, setNoticias}) => {
                 <td>{content}</td>
                 <td className="text-center">
                     <Link className='btn btn-outline-warning me-1' to={`/administrar/editar/${_id}`}>
-                        <i className="bi bi-arrow-clockwise text-warning"></i>
+                        <i className="bi bi-arrow-clockwise text-white"></i> Editar
                     </Link>
                     <Button variant="outline-danger" onClick={borrarProducto}>
-                        <i className="bi bi-x-lg text-danger"></i>
+                        <i className="bi bi-x-lg text-white"></i> Borrar
                     </Button>
                 </td>
             </tr>

@@ -1,19 +1,19 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearProductoAPI } from "../../helpers/queries";
+import { crearNewsAPI } from "../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 
-const CrearProducto = () => {
+const CrearNews = () => {
   const {register,handleSubmit,formState: { errors },reset} = useForm();
   //inicializar useNavigate
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
     //enviar la peticion a la API
-    crearProductoAPI(data).then((respuesta)=>{
+    crearNewsAPI(data).then((respuesta)=>{
       if(respuesta.status===201){
-        Swal.fire('Producto creado', 'El producto fue correctamente cargado','success')
+        Swal.fire('Noticia creada', 'La noticia fue correctamente creada','success')
         //aqui quiero resetear los value del formulario
         reset();
         //redireccionar al usuario a la pagina de administracion
@@ -27,57 +27,57 @@ const CrearProducto = () => {
   return (
     <Container className="mainSection">
       <section className="container my-3">
-        <h3 className="display-4">Nuevo Producto</h3>
+        <h3 className="display-4">Nueva Noticia</h3>
         <hr />
       </section>
       <section className="container my-3">
         <Form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre producto*</Form.Label>
+            <Form.Label>Titulo</Form.Label>
             <Form.Control
               required
               type="text"
-              placeholder="Ej:cafe"
-              {...register("nombreProducto", {
-                required: "El nombre del producto es un dato obligatorio",
+              placeholder="Titulo"
+              {...register("tituloNoticia", {
+                required: "El nombre de la noticia es un dato obligatorio",
                 minLength: {
                   value: 2,
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 20,
+                  value: 200,
                   message: "La cantidad maxima de caracteres es de 20",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.nombreProducto?.message}
+              {errors.tituloNoticia?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Precio*</Form.Label>
-            <Form.Control
+            <Form.Label>Descripcion</Form.Label>
+           <Form.Control
               required
-              type="number"
-              placeholder="Ej:50"
-              {...register("precio", {
-                required: "El precio es un valor obligatorio",
-                min: {
-                  value: 1,
-                  message: "El precio minimo debe ser de $1",
+              type="text"
+              placeholder="Descripcion"
+              {...register("descripcionNoticia", {
+                required: "La descripcion de la noticia es un dato obligatorio",
+                minLength: {
+                  value: 2,
+                  message: "La cantidad minima de caracteres debe ser 2",
                 },
-                max: {
-                  value: 10000,
-                  message: "El precio maximo debe ser de $10000",
+                maxLength: {
+                  value: 200,
+                  message: "La cantidad maxima de caracteres es de 20",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.precio?.message}
+              {errors.descripcionNoticia?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Imagen URL*</Form.Label>
+            <Form.Label>Imagen URL</Form.Label>
             <Form.Control
               required
               type="text"
@@ -91,7 +91,7 @@ const CrearProducto = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.imagen?.message}
+              {errors.url?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -101,10 +101,12 @@ const CrearProducto = () => {
             })}
             >
               <option value="">Seleccione una opción...</option>
-              <option value="Bebida caliente">Bebida caliente</option>
-              <option value="Bebida fria">Bebida Fria</option>
-              <option value="Dulce">Dulce</option>
-              <option value="Salado">Salado</option>
+              <option value="Deporte">Deporte</option>
+              <option value="Economia">Economia</option>
+              <option value="Mundo">Mundo</option>
+              <option value="Espectaculos">Espectaculos</option>
+              <option value="Opinion">Opinion</option>
+              <option value="Politica">Politica</option>
             </Form.Select>
             <Form.Text className="text-danger">
                 {errors.categoria?.message}
@@ -119,4 +121,4 @@ const CrearProducto = () => {
   );
 };
 
-export default CrearProducto;
+export default CrearNews;
