@@ -51,7 +51,7 @@ const CrearNews = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.tituloNoticia?.message}
+              {errors.title?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -73,7 +73,29 @@ const CrearNews = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.descripcionNoticia?.message}
+              {errors.description?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Contenido</Form.Label>
+           <Form.Control
+              required
+              type="text"
+              placeholder="Contenido"
+              {...register("contenidoNoticia", {
+                required: "El contenido de la noticia es un dato obligatorio",
+                minLength: {
+                  value: 2,
+                  message: "La cantidad minima de caracteres debe ser 2",
+                },
+                maxLength: {
+                  value: 200,
+                  message: "La cantidad maxima de caracteres es de 20",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.content?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -109,7 +131,7 @@ const CrearNews = () => {
               <option value="Politica">Politica</option>
             </Form.Select>
             <Form.Text className="text-danger">
-                {errors.categoria?.message}
+                {errors.category?.message}
             </Form.Text>
           </Form.Group>
           <Button variant="primary" type="submit">

@@ -35,7 +35,7 @@ export const obtenerNewsAPI = async(id)=>{
 
 export const crearNewsAPI = async(producto)=>{
     try{
-        const respuesta = await fetch(URL, console.log(URL), {
+        const respuesta = await fetch(URL,{
             
             method: "POST",
             headers:{"Content-Type": "application/json"},
