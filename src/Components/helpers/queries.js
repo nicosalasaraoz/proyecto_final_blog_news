@@ -51,15 +51,16 @@ export const crearNewsAPI = async(producto, token)=>{
     }
 }
 
-export const editarProductoAPI = async(id, producto)=>{
+export const editarNewsAPI = async(id, noticiaEditado, token)=>{
     try{
         // console.log(URL)
         const respuesta = await fetch(URL+'/'+id,{
             method: "PUT",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "x-token": token
             },
-            body: JSON.stringify(producto)
+            body: JSON.stringify(noticiaEditado)
         });
      return respuesta;
     }catch(error){

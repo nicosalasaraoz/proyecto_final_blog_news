@@ -1,9 +1,9 @@
 /* eslint-disable */
 
 import { useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
-import { useParams, useNavigate } from "react-router-dom";
-import { editarProductoAPI, obtenerNewsAPI } from "../../helpers/queries";
+import { Form, Button, Container, Breadcrumb } from "react-bootstrap";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { editarNewsAPI, obtenerNewsAPI } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -16,18 +16,22 @@ const EditarNews = () => {
     obtenerNewsAPI(id).then((respuesta) => {
       if (respuesta.status === 200) {
         //cargar los datos en el formulario
-        setValue('nombreProducto',respuesta.dato.nombreProducto);
-        setValue('precio',respuesta.dato.precio);
-        setValue('imagen',respuesta.dato.imagen);
+        console.log(respuesta)
+        setValue('category',respuesta.dato.category);
+        setValue('content',respuesta.dato.content);
+        setValue('description',respuesta.dato.description);
         setValue('categoria',respuesta.dato.categoria);
+        setValue('title',respuesta.dato.title);
+        setValue('url',respuesta.dato.url);
       }
     });
   }, []);
 
-  const onSubmit = (datos) => {
-    // console.log(datos);
+  const onSubmit = (dataNewsEditado) => {
+    console.log(dataNewsEditado);
     //pedir a la api actualizar el producto con los datos
-    editarProductoAPI(id, datos).then((respuesta)=>{
+    let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
+    editarNewsAPI(id, dataNewsEditado, token).then((respuesta)=>{
       if(respuesta.status === 200){
         Swal.fire('Producto modificado', 'El producto fue modificado correctamente', 'success');
         navegacion('/administrar');
@@ -39,63 +43,85 @@ const EditarNews = () => {
 
   return (
     <>
+    <Container className="mainSection mb-5">
       <section className="container my-3">
         <h3 className="display-4">Editar Producto</h3>
-        <hr />
       </section>
       <section className="container my-3">
         <Form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre producto*</Form.Label>
+            <Form.Label>Titulo</Form.Label>
             <Form.Control
               required
               type="text"
-              placeholder="Ej:cafe"
-              {...register("nombreProducto", {
-                required: "El nombre del producto es un dato obligatorio",
+              placeholder="Titulo"
+              {...register("title", {
+                required: "El nombre de la noticia es un dato obligatorio",
                 minLength: {
                   value: 2,
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 20,
-                  message: "La cantidad maxima de caracteres es de 20",
+                  value: 1000,
+                  message: "La cantidad maxima de caracteres es de 1000",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.nombreProducto?.message}
+              {errors.title?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Precio*</Form.Label>
-            <Form.Control
+            <Form.Label>Descripcion</Form.Label>
+           <Form.Control
               required
-              type="number"
-              placeholder="Ej:50"
-              {...register("precio", {
-                required: "El precio es un valor obligatorio",
-                min: {
-                  value: 1,
-                  message: "El precio minimo debe ser de $1",
+              type="text"
+              placeholder="Descripcion"
+              {...register("description", {
+                required: "La descripcion de la noticia es un dato obligatorio",
+                minLength: {
+                  value: 2,
+                  message: "La cantidad minima de caracteres debe ser 2",
                 },
-                max: {
-                  value: 10000,
-                  message: "El precio maximo debe ser de $10000",
+                maxLength: {
+                  value: 1000,
+                  message: "La cantidad maxima de caracteres es de 1000",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.precio?.message}
+              {errors.description?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Imagen URL*</Form.Label>
+            <Form.Label>Contenido</Form.Label>
+           <Form.Control
+              required
+              type="text"
+              placeholder="Contenido"
+              {...register("content", {
+                required: "El contenido de la noticia es un dato obligatorio",
+                minLength: {
+                  value: 2,
+                  message: "La cantidad minima de caracteres debe ser 2",
+                },
+                maxLength: {
+                  value: 1000,
+                  message: "La cantidad maxima de caracteres es de 1000",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.content?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Imagen URL</Form.Label>
             <Form.Control
               required
               type="text"
               placeholder="Ej:'https://....'"
-              {...register("imagen", {
+              {...register("url", {
                 required: "La URL de la imagen es obligatorio",
                 pattern: {
                   value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
@@ -104,24 +130,25 @@ const EditarNews = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.imagen?.message}
+              {errors.url?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Select
-              aria-label="Default select example"
-              {...register("categoria", {
-                required: "Debe seleccionar una categoria",
-              })}
+            <Form.Select aria-label="Default select example"
+            {...register('category',{
+                required:'Debe seleccionar una categoria'
+            })}
             >
               <option value="">Seleccione una opción...</option>
-              <option value="Bebida caliente">Bebida caliente</option>
-              <option value="Bebida fria">Bebida Fria</option>
-              <option value="Dulce">Dulce</option>
-              <option value="Salado">Salado</option>
+              <option value="Deporte">Deporte</option>
+              <option value="Economia">Economia</option>
+              <option value="Mundo">Mundo</option>
+              <option value="Espectaculos">Espectaculos</option>
+              <option value="Opinion">Opinion</option>
+              <option value="Politica">Politica</option>
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.categoria?.message}
+                {errors.category?.message}
             </Form.Text>
           </Form.Group>
           <Button variant="primary" type="submit">
@@ -129,6 +156,7 @@ const EditarNews = () => {
           </Button>
         </Form>
       </section>
+      </Container>
     </>
   );
 };
