@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { Form, Button, Container, Breadcrumb } from "react-bootstrap";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { editarNewsAPI, obtenerNewsAPI } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -62,8 +62,8 @@ const EditarNews = () => {
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 1000,
-                  message: "La cantidad maxima de caracteres es de 1000",
+                  value: 10000,
+                  message: "La cantidad maxima de caracteres es de 10000",
                 },
               })}
             />
@@ -84,8 +84,8 @@ const EditarNews = () => {
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 1000,
-                  message: "La cantidad maxima de caracteres es de 1000",
+                  value: 10000,
+                  message: "La cantidad maxima de caracteres es de 10000",
                 },
               })}
             />
@@ -106,8 +106,8 @@ const EditarNews = () => {
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 1000,
-                  message: "La cantidad maxima de caracteres es de 1000",
+                  value: 10000,
+                  message: "La cantidad maxima de caracteres es de 10000",
                 },
               })}
             />
