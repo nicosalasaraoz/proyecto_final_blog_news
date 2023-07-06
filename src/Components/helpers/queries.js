@@ -38,8 +38,10 @@ export const crearNewsAPI = async(producto, token)=>{
         const respuesta = await fetch(URL,{
             
             method: "POST",
-            headers:{"Content-Type": "application/json"},
-            "x-token": token,
+            headers:{
+                "Content-Type": "application/json",
+                "x-token": token
+            },
             body: JSON.stringify(producto) 
         });
         return respuesta;
