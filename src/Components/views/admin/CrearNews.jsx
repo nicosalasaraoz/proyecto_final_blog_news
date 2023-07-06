@@ -11,7 +11,9 @@ const CrearNews = () => {
 
   const onSubmit = (data) => {
     //enviar la peticion a la API
-    crearNewsAPI(data).then((respuesta)=>{
+    let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
+    console.log(token)
+    crearNewsAPI(data, token).then((respuesta)=>{
       if(respuesta.status===201){
         Swal.fire('Noticia creada', 'La noticia fue correctamente creada','success')
         //aqui quiero resetear los value del formulario
@@ -38,7 +40,7 @@ const CrearNews = () => {
               required
               type="text"
               placeholder="Titulo"
-              {...register("tituloNoticia", {
+              {...register("title", {
                 required: "El nombre de la noticia es un dato obligatorio",
                 minLength: {
                   value: 2,
@@ -46,7 +48,7 @@ const CrearNews = () => {
                 },
                 maxLength: {
                   value: 200,
-                  message: "La cantidad maxima de caracteres es de 20",
+                  message: "La cantidad maxima de caracteres es de 200",
                 },
               })}
             />
@@ -60,7 +62,7 @@ const CrearNews = () => {
               required
               type="text"
               placeholder="Descripcion"
-              {...register("descripcionNoticia", {
+              {...register("description", {
                 required: "La descripcion de la noticia es un dato obligatorio",
                 minLength: {
                   value: 2,
@@ -68,7 +70,7 @@ const CrearNews = () => {
                 },
                 maxLength: {
                   value: 200,
-                  message: "La cantidad maxima de caracteres es de 20",
+                  message: "La cantidad maxima de caracteres es de 200",
                 },
               })}
             />
@@ -82,15 +84,15 @@ const CrearNews = () => {
               required
               type="text"
               placeholder="Contenido"
-              {...register("contenidoNoticia", {
+              {...register("content", {
                 required: "El contenido de la noticia es un dato obligatorio",
                 minLength: {
                   value: 2,
                   message: "La cantidad minima de caracteres debe ser 2",
                 },
                 maxLength: {
-                  value: 200,
-                  message: "La cantidad maxima de caracteres es de 20",
+                  value: 1000,
+                  message: "La cantidad maxima de caracteres es de 1000",
                 },
               })}
             />
@@ -104,7 +106,7 @@ const CrearNews = () => {
               required
               type="text"
               placeholder="Ej:'https://....'"
-              {...register("imagen", {
+              {...register("url", {
                 required: "La URL de la imagen es obligatorio",
                 pattern: {
                   value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
@@ -118,7 +120,7 @@ const CrearNews = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Select aria-label="Default select example"
-            {...register('categoria',{
+            {...register('category',{
                 required:'Debe seleccionar una categoria'
             })}
             >

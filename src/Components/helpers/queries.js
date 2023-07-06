@@ -33,12 +33,13 @@ export const obtenerNewsAPI = async(id)=>{
     }
 }
 
-export const crearNewsAPI = async(producto)=>{
+export const crearNewsAPI = async(producto, token)=>{
     try{
         const respuesta = await fetch(URL,{
             
             method: "POST",
             headers:{"Content-Type": "application/json"},
+            "x-token": token,
             body: JSON.stringify(producto) 
         });
         return respuesta;
