@@ -69,7 +69,7 @@ export const editarNewsAPI = async(id, noticiaEditado, token)=>{
     }
 }
 
-export const borrarProductoAPI = async(id)=>{
+export const borrarNewsAPI = async(id)=>{
     try{
         const respuesta = await fetch(URL+'/'+id , {
             method: "DELETE"

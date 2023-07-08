@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import { useEffect } from "react";
-import { Form, Button, Container, Breadcrumb } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { editarNewsAPI, obtenerNewsAPI } from "../../helpers/queries";
 import { useForm } from "react-hook-form";
@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 const EditarNews = () => {
   const { id } = useParams();
-  const {register, handleSubmit, formState: { errors },setValue} = useForm();
+  const {register, handleSubmit, formState: { errors }, setValue} = useForm();
   const navegacion = useNavigate();
 
   useEffect(() => {
@@ -20,18 +20,17 @@ const EditarNews = () => {
         setValue('category',respuesta.dato.category);
         setValue('content',respuesta.dato.content);
         setValue('description',respuesta.dato.description);
-        setValue('categoria',respuesta.dato.categoria);
         setValue('title',respuesta.dato.title);
         setValue('url',respuesta.dato.url);
       }
     });
   }, []);
 
-  const onSubmit = (dataNewsEditado) => {
-    console.log(dataNewsEditado);
+  const onSubmit = (noticiaEditado) => {
+    console.log(noticiaEditado);
     //pedir a la api actualizar el producto con los datos
     let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
-    editarNewsAPI(id, dataNewsEditado, token).then((respuesta)=>{
+    editarNewsAPI(id, noticiaEditado, token).then((respuesta)=>{
       if(respuesta.status === 200){
         Swal.fire('Producto modificado', 'El producto fue modificado correctamente', 'success');
         navegacion('/administrar');
