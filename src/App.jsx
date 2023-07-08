@@ -10,13 +10,12 @@ import Error404 from "./Components/common/Error404";
 import Footer from "./Components/common/Footer"
 import Search from "./Components/views/Search";
 import ArticleDetail from "./Components/views/news/ArticleDetail";
-import Administrador from "./Components/views/admin/Administrador";
-import CrearNews from "./Components/views/admin/CrearNews";
-import EditarNews from "./Components/views/admin/EditarNews";
 import { useState, useEffect } from "react";
 import { consultarAPI } from "./Components/helpers/queries";
 import Login from "./Components/views/Login";
 import Registro from "./Components/views/Registro";
+import RutasProtegidas from "./Components/routes/Rutasprotegidas";
+import RutasAdmin from "./Components/routes/RutasAdmin";
 
 
 function App() {
@@ -42,10 +41,15 @@ function App() {
             <Route exact path="/" element={<Main searchState={searchState} setSearchState={setSearchState } />} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
             <Route path="*" element={<Error404 />} />
+            <Route
+                    path="/Administrar/*"
+                    element={
+                        <RutasProtegidas>
+                            <RutasAdmin></RutasAdmin>
+                        </RutasProtegidas>
+                    }
+            />
             <Route path="/ArticleDetail/:id"  element={<ArticleDetail/>} />
-            <Route exact path="/Administrar" element={<Administrador/>} />
-            <Route exact path="/Administrar/crear" element={<CrearNews />} />
-            <Route exact path="/Administrar/editar/:id" element={<EditarNews />} />
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
