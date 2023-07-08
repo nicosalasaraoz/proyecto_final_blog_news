@@ -10,7 +10,6 @@ const Main = ({setSearchState, searchState}) => {
 
     useEffect(() => {
         consultarAPI().then((respuesta) => {
-            //const prueba =consultarAPI(); para obtener el return
             setNews(respuesta);
         });
     }, []);
