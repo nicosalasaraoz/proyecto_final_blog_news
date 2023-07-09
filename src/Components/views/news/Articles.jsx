@@ -14,14 +14,8 @@ const Articles = ({Art}) => {
         <Card.Text className="px-2 text-center">{title}</Card.Text>
       </Card.Body>
       <div className="mt-auto btns text-white">
-        <Link className="btn" to={`/ArticleDetail/${_id}`}>
+        <Link className="btn text-white" to={`/ArticleDetail/${_id}`}>
           Ir al articulo
-        </Link>
-        <Link
-          to="/error404"
-          className=" btn like d-flex text-white"
-        >
-          <BiLike />
         </Link>
       </div>
     </div>

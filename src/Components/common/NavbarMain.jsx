@@ -49,12 +49,7 @@ const NavbarMain = ({searchState, setSearchState }) => {
               )}
             </Form>
             <Nav className="icono-call">
-              <div className="navIconsContainer">
-                <Link className="navIcons">
-                  <ion-icon name="star" className=""></ion-icon>
-                  <span className="textNav">Favoritos</span>
-                </Link>
-                
+              <div className="navIconsContainer">        
                 <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
                 <NavLink to="/usuario/registro" className={"nav-item nav-link text-white"}><ion-icon name="calendar"></ion-icon>
                   <span className="textNav">Registrarse</span></NavLink>
