@@ -70,7 +70,7 @@ const PaginaContacto = () => {
             return errors;
           }}
           onSubmit={(values) => {
-            console.log("values", values);
+            ("values", values);
           }}
         >
           {({

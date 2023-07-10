@@ -1,6 +1,5 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BiLike } from "react-icons/bi";
 
 const Articles = ({Art}) => {
   const { _id, title, url } = { ...Art };

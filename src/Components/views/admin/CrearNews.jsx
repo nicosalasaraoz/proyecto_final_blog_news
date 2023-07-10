@@ -12,7 +12,6 @@ const CrearNews = () => {
   const onSubmit = (data) => {
     //enviar la peticion a la API
     let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
-    console.log(token)
     crearNewsAPI(data, token).then((respuesta)=>{
       if(respuesta.status===201){
         Swal.fire('Noticia creada', 'La noticia fue correctamente creada','success')

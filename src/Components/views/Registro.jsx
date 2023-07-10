@@ -26,7 +26,6 @@ const Registro = ({ setUsuarioLogueado }) => {
         localStorage.setItem("tokenUsuario", JSON.stringify(dataRegistro));
         //actualizar state (me falta traer el props)
         setUsuarioLogueado(dataRegistro);
-        console.log(dataRegistro)
         // redirecciono
         navigate("/");
         // reseteo el formulario

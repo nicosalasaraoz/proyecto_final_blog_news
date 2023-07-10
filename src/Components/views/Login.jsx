@@ -14,10 +14,8 @@ const Login = ({ setUsuarioLogueado }) => {
 
     const navegacion = useNavigate();
     const onSubmitLogin = (dataLogin) => {
-        // console.log(dataLogin);
 
         login(dataLogin).then((respuesta) => {
-            // console.log(respuesta);
             if (respuesta) {
                 //almaceno el usuario en el state y localstorage
                 localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));

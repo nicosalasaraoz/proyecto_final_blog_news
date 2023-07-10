@@ -53,7 +53,6 @@ export const crearNewsAPI = async(producto, token)=>{
 
 export const editarNewsAPI = async(id, noticiaEditado, token)=>{
     try{
-        // console.log(URL)
         const respuesta = await fetch(URL+'/'+id,{
             method: "PUT",
             headers:{

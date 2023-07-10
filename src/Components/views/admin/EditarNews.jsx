@@ -16,7 +16,7 @@ const EditarNews = () => {
     obtenerNewsAPI(id).then((respuesta) => {
       if (respuesta.status === 200) {
         //cargar los datos en el formulario
-        console.log(respuesta)
+        (respuesta)
         setValue('category',respuesta.dato.category);
         setValue('content',respuesta.dato.content);
         setValue('description',respuesta.dato.description);
@@ -27,7 +27,6 @@ const EditarNews = () => {
   }, []);
 
   const onSubmit = (noticiaEditado) => {
-    console.log(noticiaEditado);
     //pedir a la api actualizar el producto con los datos
     let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
     editarNewsAPI(id, noticiaEditado, token).then((respuesta)=>{
