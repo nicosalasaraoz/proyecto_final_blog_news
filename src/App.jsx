@@ -16,6 +16,7 @@ import Login from "./Components/views/Login";
 import Registro from "./Components/views/Registro";
 import RutasProtegidas from "./Components/routes/Rutasprotegidas";
 import RutasAdmin from "./Components/routes/RutasAdmin";
+import Category from "./Components/views/Category";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const [searchState, setSearchState] = useState('');
   const [News, setNews] = useState([]);
   const [nuevo, setNuevo] = useState([]);
+  const [category, setCategory] = useState([]);
   
   useEffect(() => {
     consultarAPI().then((respuesta) => {
