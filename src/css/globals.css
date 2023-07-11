@@ -294,6 +294,27 @@ winter:FDF0E0;
   width: 100%;
 }
 
+.bt-volver::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 0.5rem;
+  opacity: 0;
+  scale: 0.95;
+  pointer-events: none;
+  transition: scale 1s ease;
+}
+
+.bt-volver:hover::after {
+  animation: pulse 1s;
+  transition: scale 1s ease;
+}
+
 .image-e {
   background-image: url(/public/images/error.jpg);
   background-size: cover;
@@ -302,6 +323,8 @@ winter:FDF0E0;
   height: 100vh;
   position: relative;
   margin: auto;
+  text-align: center;
+  z-index: 1;
 }
 @media only screen and (max-width: 600px) {
   .image-e {
@@ -469,4 +492,16 @@ winter:FDF0E0;
     display: flex;
     flex-direction: column;
   }
+}
+
+.mainSection tr{
+  text-align: center;
+}
+.mainSection td{
+  text-align: start;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }

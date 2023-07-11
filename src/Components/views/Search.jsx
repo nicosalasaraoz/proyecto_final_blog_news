@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Button, Card, Container } from "react-bootstrap";
+
+
 const Search = ({News, searchState, setSearchState}) => {
   
   const [articles, setArticles] = useState([]);
+  
   const prueba = () =>{
+
     let res = News.filter((dato) => dato.title.toLowerCase().includes(searchState.toLowerCase()));
     setArticles(res);
   } 
  
   useEffect(() => {
-    prueba()
+    prueba();
+
    }, [searchState]);
 
   return (

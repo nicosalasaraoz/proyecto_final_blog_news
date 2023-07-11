@@ -23,6 +23,7 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [searchState, setSearchState] = useState('');
   const [News, setNews] = useState([]);
+  const [nuevo, setNuevo] = useState([]);
   
   useEffect(() => {
     consultarAPI().then((respuesta) => {
@@ -32,6 +33,15 @@ function App() {
       }
     });
   }, []);
+
+   useEffect(() => {
+    consultarAPI().then((respuesta) => {
+      if (respuesta.status === 200) {
+        //cargar los datos 
+        setNuevo(respuesta)
+      }
+    });
+  }, [searchState]);
 
   return (
 <BrowserRouter>

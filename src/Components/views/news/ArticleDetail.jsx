@@ -20,7 +20,7 @@ const ArticleDetail = () => {
         <>
             <Container className="pt-4">
                 <Card className="">
-                <Row>
+                <Row xs={1} md={1} lg={2}>
                     <Col>
                     <Card.Img variant="top" src={Art.url} />
                     </Col>
