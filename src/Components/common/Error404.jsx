@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Error404 = () => {
   return (
-    <Container className="image-e btn">
+    <Container className="image-e d-flex justify-content-center">
       <Link to="/" className="text-white" style={{ textDecoration: "none" }}>
         <Button className="bt-volver">
           Back to Home
