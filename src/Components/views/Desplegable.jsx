@@ -5,7 +5,7 @@ import { FaAlignJustify, FaSort } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
-const Desplegable = () => {
+const Desplegable = ({setCategory}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -37,11 +37,11 @@ const Desplegable = () => {
             <hr></hr>
             <div className='d-flex justify-content-end' ><button onClick={() => setCol(!col)} className='bt-sort' ><FaSort /></button></div>
             <div className={`d-flex ${col ? "flex-column" : "flex-column-reverse"}`}>
+              <Link to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>              
               <Nav.Link eventKey="">Economía</Nav.Link>
-              <Nav.Link eventKey="link-3">Deportes</Nav.Link>
               <Nav.Link eventKey="link-4">Mundo</Nav.Link>
               <Nav.Link eventKey="link-5">Espectáculos</Nav.Link>
-              <Nav.Link eventKey="link-6">Política</Nav.Link>
+              <Link to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link> 
               <Nav.Link eventKey="link-7">Opinión</Nav.Link>
               <a href="https://www.lavoz.com.ar/temas/exclusivo/" className='fw-bold fs-6 text-dark' style={{ textDecoration: "none" }}>Contenido Exclusivo</a>
             </div>

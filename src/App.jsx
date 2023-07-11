@@ -63,6 +63,7 @@ function App() {
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
+            <Route exact path="/category" element={<Category nuevo={nuevo} category={category} setCategory={setCategory} />} /> 
           </Routes >
           <Footer />
       </Container>
