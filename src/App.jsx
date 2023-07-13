@@ -25,16 +25,12 @@ function App() {
   const [searchState, setSearchState] = useState('');
   const [nuevo, setNuevo] = useState([]);
   const [category, setCategory] = useState([]);
-
+  
   useEffect(() => {
     consultarAPI().then((respuesta) => {
-      if (respuesta.status === 200) {
-        //cargar los datos 
-        setNuevo(respuesta)
-      }
+             setNuevo(respuesta)
     });
   }, [searchState]);
-
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">

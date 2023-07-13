@@ -11,7 +11,6 @@ const Search = ({nuevo, searchState}) => {
     let res = nuevo.filter((dato) => dato.title.toLowerCase().includes(searchState.toLowerCase()));
     setArticles(res);
   } 
- 
   useEffect(() => {
     prueba();
    }, [searchState]);
