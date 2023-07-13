@@ -33,16 +33,15 @@ const Desplegable = ({setCategory}) => {
         <Offcanvas.Body className="canv-b">
           <Nav defaultActiveKey="/home" className="flex-column">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link eventKey="link-1">Último Momento</Nav.Link>
             <hr></hr>
             <div className='d-flex justify-content-end' ><button onClick={() => setCol(!col)} className='bt-sort' ><FaSort /></button></div>
             <div className={`d-flex ${col ? "flex-column" : "flex-column-reverse"}`}>
-              <Link to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>              
-              <Nav.Link eventKey="">Economía</Nav.Link>
-              <Nav.Link eventKey="link-4">Mundo</Nav.Link>
-              <Nav.Link eventKey="link-5">Espectáculos</Nav.Link>
-              <Link to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link> 
-              <Nav.Link eventKey="link-7">Opinión</Nav.Link>
+              <Link to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>
+              <Link to={'/category'} onClick={()=>setCategory('Economia')}>Economia</Link>
+              <Link to={'/category'} onClick={()=>setCategory('Mundo')}>Mundo</Link>
+              <Link to={'/category'} onClick={()=>setCategory('Espectaculos')}>Espectaculos</Link> 
+              <Link to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link>
+              <Link to={'/category'} onClick={()=>setCategory('Opinion')}>Opinion</Link>
               <a href="https://www.lavoz.com.ar/temas/exclusivo/" className='fw-bold fs-6 text-dark' style={{ textDecoration: "none" }}>Contenido Exclusivo</a>
             </div>
           </Nav>

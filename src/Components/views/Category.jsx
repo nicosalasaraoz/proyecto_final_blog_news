@@ -4,7 +4,7 @@ import { Button, Card, Container } from "react-bootstrap";
 const Category = ({nuevo, category, setCategory}) =>{
 
     const art = nuevo.filter((article) => article.category === category);
-
+    
     return(
         <>
             <Container className='d-flex justify-content-center'>
