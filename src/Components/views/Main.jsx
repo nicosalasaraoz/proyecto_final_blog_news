@@ -5,7 +5,7 @@ import Articles from "./news/Articles";
 import { useState, useEffect } from "react";
 import { consultarAPI } from "../helpers/queries";
 
-const Main = ({setSearchState, searchState}) => {
+const Main = ({setSearchState, searchState, setCategory}) => {
   const [News, setNews] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Main = ({setSearchState, searchState}) => {
     }, []);
   return (
     <>
-      <Header setSearchState={setSearchState} searchState={searchState}/>
+      <Header setSearchState={setSearchState} searchState={searchState} setCategory={setCategory}/>
       <Container>
       <h1 className="display-3 py-3 text-center">Artículos destacados</h1>
       <hr />

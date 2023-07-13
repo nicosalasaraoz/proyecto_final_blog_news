@@ -5,13 +5,13 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import Desplegable from "./Desplegable";
 import { FaSistrix } from "react-icons/fa";
 
-const Header = ({ setSearchState, searchState }) => {
+const Header = ({ setSearchState, searchState, setCategory}) => {
   return (
     <>
       <Navbar bg="dark" className="" sticky="top">
         <Container fluid>
           <div>
-            <Desplegable />
+            <Desplegable setCategory={setCategory}/>
             <Navbar.Brand href="#home">
               <img
                 src="./images/logo.png"

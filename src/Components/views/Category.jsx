@@ -1,15 +1,15 @@
 import React from "react";
 import { Button, Card, Container } from "react-bootstrap";
 
-const Category = ({nuevo, category}) =>{
+const Category = ({nuevo, category, setCategory}) =>{
+
     const art = nuevo.filter((article) => article.category === category);
 
     return(
         <>
-            <Container>
+            <Container className='d-flex justify-content-center'>
                 <div className="category">
-                    {
-                        art.map((article)=>(
+                    {art.map((article)=>(
                         <div key={article._id} className="Card">
                             <Card.Img variant="top" src={article.url}/>
                             <Card.Body>

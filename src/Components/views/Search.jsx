@@ -5,7 +5,7 @@ import { Button, Card, Container } from "react-bootstrap";
 const Search = ({nuevo, searchState}) => {
   
   const [articles, setArticles] = useState([]);
-  
+  console.log(nuevo)
   const prueba = () =>{
 
     let res = nuevo.filter((dato) => dato.title.toLowerCase().includes(searchState.toLowerCase()));

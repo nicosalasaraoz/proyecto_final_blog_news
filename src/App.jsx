@@ -27,16 +27,14 @@ function App() {
   const [category, setCategory] = useState([]);
   
   useEffect(() => {
-    consultarAPI().then((respuesta) => {
-             setNuevo(respuesta)
-    });
-  }, [searchState]);
+    consultarAPI().then((respuesta) => {setNuevo(respuesta)})}, [searchState]);
+
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
         <NavbarMain searchState={searchState} setSearchState={setSearchState} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
           <Routes>
-            <Route exact path="/" element={<Main searchState={searchState} setSearchState={setSearchState } />} />
+            <Route exact path="/" element={<Main searchState={searchState} setSearchState={setSearchState } setCategory={setCategory}/>} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />
             <Route path="*" element={<Error404 />} />
             <Route

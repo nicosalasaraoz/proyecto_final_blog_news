@@ -77,13 +77,6 @@ const NavbarMain = ({searchState, setSearchState }) => {
                   <Nav.Link className="text-white" eventKey="link-7">
                     Opinión
                   </Nav.Link>
-                  <Nav.Link
-                    href="https://www.lavoz.com.ar/temas/exclusivo/"
-                    className="text-white"
-                    eventKey="link-8"
-                  >
-                    Contenido Exclusivo
-                  </Nav.Link>
                 </div>
               </div>
             </Nav>
