@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Card, Container, CardGroup} from "react-bootstrap";
+import { Card, Container, CardGroup} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Category = ({nuevo, category, setCategory}) =>{
 
@@ -16,7 +17,7 @@ const Category = ({nuevo, category, setCategory}) =>{
                             <Card.Body>
                                 <Card.Title>{article.title}</Card.Title>
                                 <Card.Text>{article.description}</Card.Text>
-                                <Button>Leer mas...</Button>
+                                 <Link className="btn text-white" to={`/ArticleDetail/${article._id}`}>Leer mas...</Link>
                             </Card.Body>
                         </div>
                     ))}
