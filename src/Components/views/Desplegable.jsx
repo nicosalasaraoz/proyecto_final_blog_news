@@ -36,12 +36,12 @@ const Desplegable = ({setCategory}) => {
             <hr></hr>
             <div className='d-flex justify-content-end' ><button onClick={() => setCol(!col)} className='bt-sort' ><FaSort /></button></div>
             <div className={`d-flex ${col ? "flex-column" : "flex-column-reverse"}`}>
-              <Link to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>
-              <Link to={'/category'} onClick={()=>setCategory('Economia')}>Economia</Link>
-              <Link to={'/category'} onClick={()=>setCategory('Mundo')}>Mundo</Link>
-              <Link to={'/category'} onClick={()=>setCategory('Espectaculos')}>Espectaculos</Link> 
-              <Link to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link>
-              <Link to={'/category'} onClick={()=>setCategory('Opinion')}>Opinion</Link>
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Economia')}>Economia</Link>
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Mundo')}>Mundo</Link>
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Espectaculos')}>Espectaculos</Link> 
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link>
+              <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Opinion')}>Opinion</Link>
               <a href="https://www.lavoz.com.ar/temas/exclusivo/" className='fw-bold fs-6 text-dark' style={{ textDecoration: "none" }}>Contenido Exclusivo</a>
             </div>
           </Nav>
