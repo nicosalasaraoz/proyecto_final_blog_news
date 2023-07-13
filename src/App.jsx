@@ -23,20 +23,10 @@ function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [searchState, setSearchState] = useState('');
-  const [News, setNews] = useState([]);
   const [nuevo, setNuevo] = useState([]);
   const [category, setCategory] = useState([]);
-  
-  useEffect(() => {
-    consultarAPI().then((respuesta) => {
-      if (respuesta.status === 200) {
-        //cargar los datos 
-        setNews(respuesta)
-      }
-    });
-  }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     consultarAPI().then((respuesta) => {
       if (respuesta.status === 200) {
         //cargar los datos 
@@ -64,7 +54,7 @@ function App() {
             <Route path="/ArticleDetail/:id"  element={<ArticleDetail/>} />
             <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
-            <Route exact path="/search" element={<Search News={News} searchState={searchState} setSearchState={setSearchState} />} />
+            <Route exact path="/search" element={<Search nuevo={nuevo} searchState={searchState} setSearchState={setSearchState} />} />
             <Route exact path="/category" element={<Category nuevo={nuevo} category={category} setCategory={setCategory} />} /> 
           </Routes >
           <Footer />
