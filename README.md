@@ -5,16 +5,16 @@ Este proyecto trata de un blog de noticias, el cual muestra las noticias y se fi
 Nicolas Salas Araoz
 
 ## Github
-En caso de querer clonar el proyecto acceda al repositorio publico del mismo en GitHub:
-https://github.com/nicosalasaraoz/proyecto_final_blog_news
+En caso de querer clonar el proyecto acceda al repositorio publico del mismo en GitHub:</br>
+https://github.com/nicosalasaraoz/proyecto_final_blog_news</br>
 comandos necesarios: npm install npm start
 
 ## Vercel
 Prueba el proyecto online en vercel
 
 ## Librerias Externas
-Bootsptrap
-React- Boostrap
-SweatAlert2
-React-hook-form
-React-router-dom
+Bootsptrap</br>
+React- Boostrap</br>
+SweatAlert2</br>
+React-hook-form</br>
+React-router-dom</br>
