@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Container, CardGroup} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Category = ({nuevo, category, setCategory}) =>{
+const Category = ({nuevo, category}) =>{
 
     const art = nuevo.filter((article) => article.category === category);
 

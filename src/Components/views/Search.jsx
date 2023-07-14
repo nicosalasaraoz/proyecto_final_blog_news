@@ -6,7 +6,9 @@ const Search = ({nuevo, searchState}) => {
   
   const [articles, setArticles] = useState([]);
 
-  useEffect(() => {prueba()}, [searchState]);
+  useEffect(() => {prueba();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [searchState]);
 
   const prueba = () =>{
     
