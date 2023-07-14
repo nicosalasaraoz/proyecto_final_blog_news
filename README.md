@@ -1,5 +1,5 @@
 # ROLLING NEWS
-Este proyecto trata de un blog de noticias, el cual muestra las noticias y se filtra por categorias y por temas. El mismo cuenta con una funcion de administrador el cual puede crear, editar y borrar las noticias que crea convenientes. El alcance de este proyecto se centra en realizar todos los pasos del CRUD.
+Este proyecto trata de un blog de noticias, el cual muestra las noticias de interes general y se filtra por categorias Economia, Espectaculos, Opinion, Mundo, Deportes, Politica. El mismo cuenta con una funcion de administrador el cual puede crear, editar y borrar las noticias que crea convenientes. El alcance de este proyecto se centra en realizar todos los pasos del CRUD.
 
 ## Autor
 Nicolas Salas Araoz
