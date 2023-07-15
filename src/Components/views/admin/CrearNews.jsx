@@ -108,6 +108,7 @@ const CrearNews = () => {
               {...register("url", {
                 required: "La URL de la imagen es obligatorio",
                 pattern: {
+                  // eslint-disable-next-line
                   value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
                   message: "Debe ingresar una URL valida",
                 },
