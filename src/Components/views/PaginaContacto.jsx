@@ -128,16 +128,6 @@ const PaginaContacto = () => {
                 <div style={{ color: "red" }} className="mt-1">
                   {errors.phone && touched.phone && errors.phone}
                 </div>
-                {/* <Field
-                  name="message"
-                  values={values.message}
-                  className={`ControlTextarea ${
-                    errors.message && touched.message && "is-invalid"
-                  }`}
-                />
-                <div style={{ color: "red" }} className="mt-1">
-                  {errors.message && touched.message && errors.message}
-                </div> */}
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlTextarea1"
