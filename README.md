@@ -10,7 +10,8 @@ https://github.com/nicosalasaraoz/proyecto_final_blog_news</br>
 comandos necesarios: npm install npm start
 
 ## Vercel
-Prueba el proyecto online en vercel
+Prueba el proyecto online en vercel</br>
+https://proyecto-final-blog-news-o5tg.vercel.app/
 
 ## Librerias Externas
 Bootsptrap</br>
