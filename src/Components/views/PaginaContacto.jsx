@@ -69,9 +69,7 @@ const PaginaContacto = () => {
             }
             return errors;
           }}
-          onSubmit={(values) => {
-            ("values", values);
-          }}
+          onSubmit={(values) => (values)}
         >
           {({
             values,
