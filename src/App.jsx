@@ -32,7 +32,7 @@ function App() {
   return (
 <BrowserRouter>
       <Container fluid className="d-flex flex-column min-vh-100 px-0">
-        <NavbarMain searchState={searchState} setSearchState={setSearchState} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
+        <NavbarMain searchState={searchState} setSearchState={setSearchState} usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} category={category} setCategory={setCategory}/>
           <Routes>
             <Route exact path="/" element={<Main searchState={searchState} setSearchState={setSearchState } setCategory={setCategory}/>} />
             <Route exact path="/PaginaContacto" element={<PaginaContacto />} />

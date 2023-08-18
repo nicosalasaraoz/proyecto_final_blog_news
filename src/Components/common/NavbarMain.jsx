@@ -3,7 +3,7 @@ import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { FaSistrix } from "react-icons/fa";
 
-const NavbarMain = ({searchState, setSearchState }) => {
+const NavbarMain = ({searchState, setSearchState, setCategory }) => {
 
   return (
     <>
@@ -58,26 +58,14 @@ const NavbarMain = ({searchState, setSearchState }) => {
               <div className="sec-nav">
                 <hr className="text-white" />
                 <h3 className="text-white fs-5">SECCIONES</h3>
-                <div>
-                  <Nav.Link className="text-white" eventKey="">
-                    Economía
-                  </Nav.Link>
-                  <Nav.Link className="text-white" eventKey="link-3">
-                    Deportes
-                  </Nav.Link>
-                  <Nav.Link className="text-white" eventKey="link-4">
-                    Mundo
-                  </Nav.Link>
-                  <Nav.Link className="text-white" eventKey="link-5">
-                    Espectáculos
-                  </Nav.Link>
-                  <Nav.Link className="text-white" eventKey="link-6">
-                    Política
-                  </Nav.Link>
-                  <Nav.Link className="text-white" eventKey="link-7">
-                    Opinión
-                  </Nav.Link>
-                </div>
+                <Container className="d-flex justify-content-end flex-column">
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Deporte')}>Deportes</Link>
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Economia')}>Economia</Link>
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Mundo')}>Mundo</Link>
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Espectaculos')}>Espectaculos</Link> 
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Politica')}>Politica</Link>
+                  <Link style={{ textDecoration: "none" }} to={'/category'} onClick={()=>setCategory('Opinion')}>Opinion</Link>
+                </Container>
               </div>
             </Nav>
           </Navbar.Collapse>
