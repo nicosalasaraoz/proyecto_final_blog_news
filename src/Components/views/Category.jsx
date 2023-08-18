@@ -8,7 +8,7 @@ const Category = ({nuevo, category}) =>{
 
     return(
         <>
-            <Container className='d-flex justify-content-center'>
+            <Container className='justify-content-center'>
                 <CardGroup>
                 <div className="category cards">
                     {art.map((article)=>(
