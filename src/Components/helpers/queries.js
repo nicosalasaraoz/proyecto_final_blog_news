@@ -1,8 +1,3 @@
-//peticion GET para obtener todos los productos
-//peticion POST crear un nuevo producto, en los login tambien lo puedo usar
-//peticion PUT sirve para modificar un producto
-//peticion DELETE sirve para borrar un producto
-
 const URL = process.env.REACT_APP_API_NEWS;
 const URLlogin = process.env.REACT_APP_API_LOGIN;
 const URLRegister = process.env.REACT_APP_API_REGISTER;
@@ -80,7 +75,7 @@ export const borrarNewsAPI = async(id)=>{
     }
 }
 
-//peticion POST (para agregar un USUARIO al servidor)//
+
 export const crearUsuarioAPI = async (usuario) => {
     try {
         const respuesta = await fetch(URLRegister, {

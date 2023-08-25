@@ -11,9 +11,9 @@ const ItemNews = ({noticias, setNoticias}) => {
         borrarNewsAPI(_id).then((respuesta)=>{
             if(respuesta.status === 200){
                 Swal.fire('Producto eliminado', 'El producto fue correctamente eliminado','success');
-                //busco todos los productos existentes en ese instante de tiempo
+               
                 consultarAPI().then((respuesta)=>{
-                    //actualizo el state de productos de Administrador con los datos que hay en la api
+                    
                     setNoticias(respuesta);
                 })
             }else{

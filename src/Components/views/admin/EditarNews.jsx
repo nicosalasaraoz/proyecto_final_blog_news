@@ -15,7 +15,7 @@ const EditarNews = () => {
   useEffect(() => {
     obtenerNewsAPI(id).then((respuesta) => {
       if (respuesta.status === 200) {
-        //cargar los datos en el formulario
+       
         (respuesta)
         setValue('category',respuesta.dato.category);
         setValue('content',respuesta.dato.content);
@@ -27,7 +27,7 @@ const EditarNews = () => {
   }, []);
 
   const onSubmit = (noticiaEditado) => {
-    //pedir a la api actualizar el producto con los datos
+    
     let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
     editarNewsAPI(id, noticiaEditado, token).then((respuesta)=>{
       if(respuesta.status === 200){

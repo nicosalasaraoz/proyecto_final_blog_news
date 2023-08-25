@@ -17,13 +17,10 @@ const Login = ({ setUsuarioLogueado }) => {
 
         login(dataLogin).then((respuesta) => {
             if (respuesta) {
-                //almaceno el usuario en el state y localstorage
+               
                 localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
                 setUsuarioLogueado(respuesta.usuario);
-                // si el usuario es correcto entonces redirecciono al admin
-                //reseteo el formulario
                 reset();
-                //redirecciono al usuario a la pagina de Administracion
                 navegacion("/administrar");
             } else {
                 Swal.fire("El usuario no existe", "error en el nombre de usuario o password", "error");

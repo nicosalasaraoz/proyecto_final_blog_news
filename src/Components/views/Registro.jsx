@@ -14,7 +14,7 @@ const Registro = ({ setUsuarioLogueado }) => {
     } = useForm();
 
     const onSubmitRegistro = (dataRegistro) => {
-        //una vez todo validado enviamos la peticion a la API
+        
         crearUsuarioAPI(dataRegistro).then((respuesta) => {
             if (respuesta.status === 201) {
                 Swal.fire("Usuario creado", "El Usuario fue registrado correctamente", "success");
@@ -22,13 +22,13 @@ const Registro = ({ setUsuarioLogueado }) => {
                 Swal.fire("El usuario no fue creado", "Los datos ingresados son incorrectos", "error");
             }
         });
-        //guardar sesion en el local storage
+        
         localStorage.setItem("tokenUsuario", JSON.stringify(dataRegistro));
-        //actualizar state (me falta traer el props)
+     
         setUsuarioLogueado(dataRegistro);
-        // redirecciono
+        
         navigate("/");
-        // reseteo el formulario
+        
         reset();
     };
     return (

@@ -6,18 +6,18 @@ import { useNavigate } from "react-router-dom";
 
 const CrearNews = () => {
   const {register,handleSubmit,formState: { errors },reset} = useForm();
-  //inicializar useNavigate
+
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
-    //enviar la peticion a la API
+
     let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
     crearNewsAPI(data, token).then((respuesta)=>{
       if(respuesta.status===201){
         Swal.fire('Noticia creada', 'La noticia fue correctamente creada','success')
-        //aqui quiero resetear los value del formulario
+      
         reset();
-        //redireccionar al usuario a la pagina de administracion
+        
         navegacion('/Administrar');
       }else{
         Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos','error')
