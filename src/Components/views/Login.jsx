@@ -16,8 +16,7 @@ const Login = ({ setUsuarioLogueado }) => {
     const onSubmitLogin = (dataLogin) => {
 
         login(dataLogin).then((respuesta) => {
-            if (respuesta) {
-               
+            if (respuesta.status === 200) {
                 localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
                 setUsuarioLogueado(respuesta.usuario);
                 reset();
