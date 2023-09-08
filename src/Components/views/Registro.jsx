@@ -47,6 +47,10 @@ const Registro = ({ setUsuarioLogueado }) => {
                                 placeholder="Ingrese su nombre"
                                 {...register("name", {
                                     required: "Ingrese su nombre",
+                                    pattern: {
+                                        value: /^[A-Za-z]+$/i,
+                                        message: "Debe ingresar un nombre valido",
+                                    },
                                     minLength: {
                                         value: 2,
                                         message: "La cantidad mínima de caracteres debe ser 2",
