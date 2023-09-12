@@ -28,7 +28,7 @@ const EditarNews = () => {
 
   const onSubmit = (noticiaEditado) => {
     
-    let token = JSON.parse(localStorage.getItem("tokenUsuario")).token;
+    let token = JSON.parse(localStorage.getItem("usuarioLogueado")).token;
     editarNewsAPI(id, noticiaEditado, token).then((respuesta)=>{
       if(respuesta.status === 200){
         Swal.fire('Producto modificado', 'El producto fue modificado correctamente', 'success');

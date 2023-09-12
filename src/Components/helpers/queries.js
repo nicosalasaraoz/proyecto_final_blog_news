@@ -105,7 +105,7 @@ export const login = async (usuario) => {
         const datos = await respuesta.json();
         return {
             status: respuesta.status,
-            usuario: datos.usuario,
+            usuario: datos.nombre,
             token: datos.token,
             mensaje: datos.mensaje,
         };

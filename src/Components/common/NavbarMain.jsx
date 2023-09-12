@@ -1,10 +1,17 @@
-import React from "react";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { FaSistrix } from "react-icons/fa";
 
-const NavbarMain = ({searchState, setSearchState, setCategory }) => {
 
+const NavbarMain = ({usuarioLogueado,setUsuarioLogueado, searchState, setSearchState, setCategory }) => {
+  
+  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado")) || {};
+  const cerrarSesion = () => {
+    localStorage.removeItem("usuarioLogueado");
+    setUsuarioLogueado();
+  };
+  
+  console.log(usuario)
   return (
     <>
       <Navbar bg="dark" expand="md" className="bg-navbar">
@@ -53,7 +60,40 @@ const NavbarMain = ({searchState, setSearchState, setCategory }) => {
                 <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
                 <NavLink to="/usuario/registro" className={"nav-item nav-link text-white"}><ion-icon name="calendar"></ion-icon>
                   <span className="textNav">Registrarse</span></NavLink>
-                
+                {!usuarioLogueado ? (
+                                <>
+                                    
+                                </>
+                            ) : (
+                                <>
+                                    {usuarioLogueado.rol === "Administrador" ? (
+                                        <>
+                                            <NavLink to="/administrar" className={"nav-item linksMenu fw-bold fontTitulos fs-1 hoverLinksMenu"}>
+                                                Administrador
+                                            </NavLink>
+                                            <NavLink
+                                                to={"/"}
+                                                onClick={cerrarSesion}
+                                                className={
+                                                    "nav-item linksMenu fw-bold backgroundBotones text-white fs-3 rounded h-5 hoverLoginOutMenu"
+                                                }
+                                            >
+                                                Logout<i className="bi bi-box-arrow-in-right"></i>
+                                            </NavLink>
+                                        </>
+                                    ) : (
+                                        <NavLink
+                                            to={"/"}
+                                            onClick={cerrarSesion}
+                                            className={
+                                                "nav-item linksMenu fw-bold backgroundBotones margenLogOut text-white fs-3 rounded h-25 hoverLoginOutMenu"
+                                            }
+                                        >
+                                            Logout<i className="bi bi-box-arrow-in-right"></i>
+                                        </NavLink>
+                                    )}
+                                </>
+                            )}
               </div>
               <div className="sec-nav">
                 <hr className="text-white" />

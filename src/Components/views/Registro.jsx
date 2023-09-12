@@ -23,7 +23,7 @@ const Registro = ({ setUsuarioLogueado }) => {
             }
         });
         
-        localStorage.setItem("tokenUsuario", JSON.stringify(dataRegistro));
+        localStorage.setItem("usuarioLogueado", JSON.stringify(dataRegistro));
      
         setUsuarioLogueado(dataRegistro);
         

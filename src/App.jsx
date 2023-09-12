@@ -20,7 +20,7 @@ import Category from "./Components/views/Category";
 
 
 function App() {
-  const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
+  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   const [searchState, setSearchState] = useState('');
   const [nuevo, setNuevo] = useState([]);

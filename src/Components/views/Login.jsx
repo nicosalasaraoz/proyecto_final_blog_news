@@ -17,8 +17,8 @@ const Login = ({ setUsuarioLogueado }) => {
 
         login(dataLogin).then((respuesta) => {
             if (respuesta.status === 200) {
-                localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
-                setUsuarioLogueado(respuesta.usuario);
+                localStorage.setItem("usuarioLogueado", JSON.stringify(respuesta));
+                setUsuarioLogueado(respuesta);
                 reset();
                 navegacion("/administrar");
             } else {
