@@ -108,6 +108,7 @@ export const login = async (usuario) => {
             usuario: datos.nombre,
             token: datos.token,
             mensaje: datos.mensaje,
+            rol: datos.rol
         };
     } catch (error) {
         return false;

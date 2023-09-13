@@ -4,14 +4,12 @@ import { FaSistrix } from "react-icons/fa";
 
 
 const NavbarMain = ({usuarioLogueado,setUsuarioLogueado, searchState, setSearchState, setCategory }) => {
-  
-  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado")) || {};
   const cerrarSesion = () => {
     localStorage.removeItem("usuarioLogueado");
     setUsuarioLogueado();
   };
   
-  console.log(usuario)
+  console.log(usuarioLogueado)
   return (
     <>
       <Navbar bg="dark" expand="md" className="bg-navbar">

@@ -14,7 +14,6 @@ const Registro = ({ setUsuarioLogueado }) => {
     } = useForm();
 
     const onSubmitRegistro = (dataRegistro) => {
-        
         crearUsuarioAPI(dataRegistro).then((respuesta) => {
             if (respuesta.status === 201) {
                 Swal.fire("Usuario creado", "El Usuario fue registrado correctamente", "success");
