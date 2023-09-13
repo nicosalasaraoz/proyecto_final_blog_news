@@ -12,7 +12,7 @@ const Header = ({ setSearchState, searchState, setCategory}) => {
         <Container fluid>
           <div>
             <Desplegable setCategory={setCategory}/>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand>
               <img
                 src="./images/logo.png"
                 alt="logo"
