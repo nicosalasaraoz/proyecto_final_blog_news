@@ -14,7 +14,7 @@ const Registro = ({ setUsuarioLogueado }) => {
     } = useForm();
 
     const onSubmitRegistro = (dataRegistro) => {
-        const perfilEstado = { rol: "admin"};
+        const perfilEstado = { rol: "user"};
         const dataNuevo = Object.assign(dataRegistro, perfilEstado);
         crearUsuarioAPI(dataNuevo).then((respuesta) => {
             if (respuesta.status === 201) {
