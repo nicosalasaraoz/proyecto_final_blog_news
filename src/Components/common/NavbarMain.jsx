@@ -9,7 +9,6 @@ const NavbarMain = ({usuarioLogueado,setUsuarioLogueado, searchState, setSearchS
     setUsuarioLogueado();
   };
   
-  console.log(usuarioLogueado)
   return (
     <>
       <Navbar bg="dark" expand="md" className="bg-navbar">
