@@ -1,6 +1,5 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 
@@ -12,7 +11,6 @@ const Login = ({ setUsuarioLogueado }) => {
         reset,
     } = useForm();
 
-    const navegacion = useNavigate();
     const onSubmitLogin = (dataLogin) => {
 
         login(dataLogin).then((respuesta) => {
@@ -20,7 +18,6 @@ const Login = ({ setUsuarioLogueado }) => {
                 localStorage.setItem("usuarioLogueado", JSON.stringify(respuesta));
                 setUsuarioLogueado(respuesta);
                 reset();
-                navegacion("/administrar");
             } else {
                 Swal.fire("El usuario no existe", "error en el nombre de usuario o password", "error");
             }

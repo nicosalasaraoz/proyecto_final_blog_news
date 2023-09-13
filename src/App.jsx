@@ -46,7 +46,7 @@ function App() {
                     }
             />
             <Route path="/ArticleDetail/:id"  element={<ArticleDetail/>} />
-            <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+            <Route exact path="/usuario/login" element={!usuarioLogueado ? (<Login setUsuarioLogueado={setUsuarioLogueado}/>) : (<Main searchState={searchState} setSearchState={setSearchState } setCategory={setCategory}/>)}/>
             <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route exact path="/search" element={<Search nuevo={nuevo} searchState={searchState} setSearchState={setSearchState} />} />
             <Route exact path="/category" element={<Category nuevo={nuevo} category={category} setCategory={setCategory} />} /> 

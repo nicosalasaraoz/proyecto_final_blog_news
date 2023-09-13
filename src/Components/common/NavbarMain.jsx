@@ -53,41 +53,29 @@ const NavbarMain = ({usuarioLogueado,setUsuarioLogueado, searchState, setSearchS
               )}
             </Form>
             <Nav className="icono-call">
-              <div className="navIconsContainer">        
-                <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
-                <NavLink to="/usuario/registro" className={"nav-item nav-link text-white"}><ion-icon name="calendar"></ion-icon>
-                  <span className="textNav">Registrarse</span></NavLink>
+              <div className="navIconsContainer">
                 {!usuarioLogueado ? (
                                 <>
-                                    
+                                    <NavLink to="/usuario/login" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Login</span></NavLink>
+                                    <NavLink to="/usuario/registro" className={"nav-item nav-link text-white"}><ion-icon name="calendar"></ion-icon><span className="textNav">Registrarse</span></NavLink>
                                 </>
                             ) : (
                                 <>
-                                    {usuarioLogueado.rol === "Administrador" ? (
+                                    {usuarioLogueado.rol === "admin" ? (
                                         <>
-                                            <NavLink to="/administrar" className={"nav-item linksMenu fw-bold fontTitulos fs-1 hoverLinksMenu"}>
-                                                Administrador
+                                            <NavLink to="/administrar" className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Administrar</span>
                                             </NavLink>
-                                            <NavLink
-                                                to={"/"}
-                                                onClick={cerrarSesion}
-                                                className={
-                                                    "nav-item linksMenu fw-bold backgroundBotones text-white fs-3 rounded h-5 hoverLoginOutMenu"
-                                                }
-                                            >
-                                                Logout<i className="bi bi-box-arrow-in-right"></i>
-                                            </NavLink>
+                                            <NavLink to="/" onClick={cerrarSesion} className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Logout</span></NavLink>
                                         </>
                                     ) : (
+                                      <>
+                                      
                                         <NavLink
-                                            to={"/"}
+                                            to="/"
                                             onClick={cerrarSesion}
-                                            className={
-                                                "nav-item linksMenu fw-bold backgroundBotones margenLogOut text-white fs-3 rounded h-25 hoverLoginOutMenu"
-                                            }
-                                        >
-                                            Logout<i className="bi bi-box-arrow-in-right"></i>
+                                            className={"navIcons"}><ion-icon name="log-in-outline" size={3}></ion-icon><span className="textNav">Logout</span>
                                         </NavLink>
+                                        </>
                                     )}
                                 </>
                             )}
